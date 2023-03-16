@@ -1,0 +1,18 @@
+﻿@model KusysDemo.Entities.Student;
+@{
+    ViewData["Title"] = "Student Index";
+    Layout = "_Layout";
+}
+@using (Html.BeginForm("Edit","Student", FormMethod.Post))
+{
+    <div>
+        @Html.HiddenFor(s=>s.StudentId);
+        <label for="FirstName">Name</label>
+        <input type="text" name="FirstName" value="@Model.FirstName" class="form-control">
+        <label for="LastName">LastName</label>
+        <input type="text" name="LastName" value="@Model.LastName" class="form-control">
+        <label for="BirthDate">BirthDate</label>
+        <input type="datetime-local" value="@Model.BirthDate" name="BirthDate" class="form-control">
+    </div>
+    <input type="submit" value="Update" />
+}
